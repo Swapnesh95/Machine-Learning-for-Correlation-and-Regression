@@ -1,0 +1,1225 @@
+---
+title: ''
+output: html_document
+---
+
+<style type="text/css">
+
+body, td {
+   font-size: 16px;
+   
+}
+code.r{
+  font-size: 15px;
+  
+}
+pre {
+  font-size: 15px
+}
+</style>
+
+---
+
+
+<BR>
+<BR>
+<HTML>
+<HEAD>
+<BODY>
+<CENTER>
+![](C:\\Users\\User\\OneDrive\\Documents\\ALY_6010\\Assingment_4\\NEU-logo.png)
+<FONT SIZE=5, COLOR="#B57F0A">
+<BR> <B> PROBABILITY THEORY AND INTRODUCTORY STATISTICS </B>
+<BR> SWAPNESH TIWARI
+<BR> CORRELATION AND REGRESSION
+<BR> Date :  `r format(Sys.time(), "%d %B, %Y")`
+</FONT>
+</CENTER>
+</HEAD>
+<BR>
+<BR>
+<BR>
+
+---
+
+<BR>
+
+<CENTER>
+<P><BR>
+<FONT SIZE=3, COLOR="#0C2E7F">
+<B> <U> Section 1 - Intro </U> </B> 
+</FONT>
+</CENTER>
+
+<BR>
+<FONT SIZE=2.5, align = justify>
+
+<B>Details on the data set</B>
+
+I will be using an open source data set which is build in named as MPG is a part of ggplot2 a package in R. This data set consist of 11 columns and 234 observations. This data set consist of all the data about the configuration of car, such as manufacturer, model, displacement, year, cylinder, transmission, average in city and average on highway and class of vehicle. Data set consist of 6 categorical and 4 numerical variables. The data which we will be using in our project are two sets, one is <Mark> Cylinders which is a Multi valued discrete data and other is displacement which is a continuous data.</mark> In the second part of multiple regression we will use three types of data such as age, weight and systolic bp which are all continuous type of data. The data set consist of all the top cars with 4,5,6,8 cylinders.
+
+
+<B>History about Correlation and Linear Regression</B>
+
+Going back to the history of correlation and regression, the very first model of tools used for correlation and regression was developed by Sir Francis Galton in 1888, Denis, D. (2001). But later in 1898, Karl Pearson developed a mathematical equation for correlation which was a more important aspect that is used until now to calculate the relationship between the two variables, Stigler, S. M. (1986).  But there is a lot of confusion about whether the work of Auguste Bravais is also related to the invention of correlation techniques, Denis, D. (2001). It would be interesting to know that the very first statistical error was used in the field of astronomy in the 18th century, these techniques were mainly used to determine whether the earth is flat or round., and astronomers were having a hard time figuring out a way to put all the observations into one single value so that measuring the data is more reliable and accurate, Denis, D. (2001). There is also one more person named Robert Adrain who was a famous American mathematician who was thought to have defined the probability for errors the two variables which are independent and dependent to occur at one given point, Walker, H. M. (1929).  
+
+<CENTER>
+![](C:\\Users\\User\\OneDrive\\Documents\\ALY_6010\\Assingment_6\\Galtons_Regression.JPG)
+  
+The above figure 1 shows the Galtons "Table of Correlation", Denis, D. (2001).  
+</Center>
+<BR>
+
+In the above diagram we can see that some things are still missing from the Galton’s equation, Galton experimented in 1885 to conclude his regression model with evidence, therefore he selected 928 offspring and their parents, He first generated a table called as Table of Correlation which is presented above, this below table presented the “heights of mid parents against the heights of offspring’s”, so, for example, he described and compared if the height of parent is about 70 inches and if the adult offspring has a height of 67 inches then according to Galton’s diagram he marked it in the particular cell where the data collected form a 90-degree angle.
+
+<B>Practical applications of correlation in medical industry</B>
+
+One of the best examples where regression analysis can be used is in the medical industry where researchers use regression analysis to identify the relation between the drug and the outcome of the drug, to better understand this theory let’s take an example from the study published by Azoulay, L. in 2017:
+
+For example, let’s take a drug called sulfonylurea which is an anti-diabetic drug, therefore, a researcher wants to determine if administering a particular anti-diabetic drug can lower the blood glucose level to do this researcher uses co-relation testing, there are two types of variables included in this study, one is the predictor variable , the second is a response variable, predictor variable is the drug and the response variable is the blood glucose level, therefore if we add it to the formula we get :
+
+Blood Sugar Level = B0 + B1(Drug Dose)
+
+Where coefficient B0 is the expected level of blood glucose in the human body when no drug is administered
+
+Where coefficient B1 is the mean change in blood glucose levels when the drug is administered.
+
+If the given B1 is negative then it states that as the drug is administered it will decrease the blood glucose levels.
+
+If the B1 is very close to zero, it will mean that administering the drug has no change in the blood glucose levels.
+
+If the given B1 is positive it will show that administering the drug has increased the blood glucose levels.
+
+So, it all depends on which of the following factors are taken into consideration by the researcher so that decision is made.
+
+
+
+<B>Hypothesis testing in the context of regression analysis</B>
+
+In contrast to hypothesis testing and linear regression, hypothesis testing bases its foundations mostly on relation between the independent variable and the dependent variable which in the case of linear regression is the variable of response and the other one is the variable that predicts the independent variable. When we approach hypothesis testing through linear regression, we use two types of tests which are F-tests which test if there is no significant difference in variances of the given two populations and they both are equal, on the other, the T-test test is applied when there is unknown stadard deviation of the two populations, but as an analyst, we need to be sure that whatever data we are using it best fits the regression model. Xue, K., & Yao, F. (2021).
+
+Hypothesis testing concerning correlation five possibilities are involved defined by Bluman, A. G. (2009):  
+1. Independent variables always have a cause that develops the dependent variables.  
+2. Despite the first point, the reverse situation can also exist such as a statistician sees if consumption of too much nicotine can cause nervousness but he/she also fails to understand if nervousness can cause consumption of nicotine.
+3. There can also be an involvement of the third variable.
+
+
+<B>Importance of Final Project</B>
+
+
+Analytics is a field where there is an innovation of new things with the help of data, it also provides us evidence if the innovation will be effective, in doing so we need vast amounts of data, Cooper, A. (2012), this course has taught me how to gather data, interpret the data, analyze the data and how to make decisions using the data, some of the techniques included; testing hypothesis with help of critical value and testing hypothesis using the P-value approach, these techniques are essential for me since I will be entering the medical industry as an analyst and these tests are an important factor when testing for the action of drugs. This final project will help develop skills in comparing two populations and developing a hypothesis based on the correlation and regression model. Correlation is an important factor in the medical industry when comparing the effect of drugs while assuming one is the independent and one is the dependent variable as I have given in the example above.
+
+
+<B>Advantages of using R</B>
+
+There are a lot of advantages when using R for data analysis, such as R is easy to use, R has beautiful graphics which we can use to present data, R has a lot of packages that can make the output more informative, R has a lot of statistical tools which can make the analysis more presentable and understandable, the best thing about R is it is open-source software and is supported by many operating systems, R can also be used with SQL to design databases, can also be used with Python and C++ and has numerous more compatibility with other languages, R is a stable software and is reliable for data analysis, Kabacoff, R. I. (2015). 
+
+<BR>
+
+---
+
+---
+
+
+<BR>
+```{r Libraries, warning=FALSE, message=FALSE}
+
+# Library Used in this project
+
+#Important Libraries
+library(ggplot2)
+library(dplyr)
+library(knitr)
+
+#Extra Packages used
+library(magrittr)
+library(kableExtra)
+library(RColorBrewer)
+
+
+
+# Open source data sets will be used in this project to practice analysis of data
+
+#Creating a Data object
+
+CarInfo = mpg
+```
+
+
+---
+
+---
+
+
+
+<BR>
+
+<Center>
+<P><BR>
+<FONT SIZE=3, COLOR="#0C2E7F">
+<B> <U> Section 2 - Simple Regression </U> </B> 
+</FONT>
+</Center>
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B>1. Description of the data set  </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+In this task I will be using different codes to fetch the information about the MPG data set which is a part of ggplot2, to do I need ggplot2 library and psych package. I will be using describe code and to make the table in right shape and size I will be rotating the table using the t code which is transpose.
+</FONT>
+
+```{r Describe the Data MPG}
+
+#Created a data set names CarInfo and then used it to fetch details such as Variation, number of samples, measures of central tendency and dispersion. 
+CarInfo%>%
+  dplyr::select("manufacturer", "model", "displ", "year","cyl", "trans", "drv", "cty", "hwy", "fl", "class")%>%
+  psych::describe()%>% #Used Psych code to describe the data.
+  t()%>% #used transpose to create a good orientation of table.
+  round(2)%>% #rounded to two decimals
+  knitr::kable( caption = " Table 1 - Descriptive statistics of MPG data set from ggplot2")%>% 
+  kableExtra::kable_paper()
+
+```
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+From the following we can observe the mean, median and other measures, this data is represents values for all 11 columns. Values are identified as numerical.We can observe one value which is in negative called a kurtosis which generally measures all the values in the tail relative to the their central center of distribution, Hogg, R. V. (1972).  
+</FONT>
+
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 2. Statistics Table </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ Imagine we need to know if number of cylinders in car affects the displacement of car, which in turn can affect the performance, to figure it out we need to check the relationship between Displacement and Cylinders, using the <Mark> unique(CarInfo$cyl) </Mark> we can see that our MPG data set consist of  ``r unique(CarInfo$cyl) `` number of cylinders. 
+</FONT>
+
+<BR>
+
+
+```{r Table for Cylinders vs Displacement}
+
+
+NumOfCylinders = unique(CarInfo$cyl) 
+
+#Calculating values for number of cylinders in car respect to displacement.
+
+CarPlot = CarInfo %>% 
+  group_by(Cylinders = cyl) %>%
+  summarise(Mean_Value = mean(displ), 
+            Standard_Deviation = sd(displ),
+            Minimum_Value = min(displ),
+            Maximum_Value = max(displ))
+
+#Creating a table to descibe all the values in one
+CarPlot %>%
+  kable(align = "c",
+        caption = "Table 2 - Statistics Of Displacement Per Cylinders In The Mpg Data Set",
+        format = "html",
+        digits = 2,
+        table.attr = "style='width:75%;'")%>%
+  kable_paper(bootstrap_options=c("hover","bordered"),
+              html_font = "Times New Roman",
+              position = "center",
+              font_size = 14) %>%
+  add_header_above(c(" " = 1,"Displacement" = 4)) #added header so that it accumulates the 4 columns under it.
+
+```
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+From above table we can conclude that if there is increase in number of cylinders there is need to increase the or the displacement of the car increases directly, since if the displacement is low and the number of cylinders are high that can cause misfire and can result in decreased performance. Therefore if the mean in the table is increasing that generally means the displacement of the engine is also increasing as increase in cylinder.For a high performance car it is essential to balance displacement with the number of cylinders but Ferrari did an outstanding job by creating a 1.5 liter engine car with 8 cylinders known as 1.5 l engine 1965 Ferrari 1512, and  Chevrolet Corvette having a huge displacement of 7.0L with V8 engines. 
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U>  3. Finding Correlation and Determination</U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ Lets assume I am a racer and I need a very fast car, so I was told that the higher the cylinder the more fast a car is and now I am interested to know if the said words are true therefore I hire a data analyst to give me the data , therefore the data analyst will check for the relationship between the displacement and cylinders of most of the cars and hand me the results:  
+</FONT>
+
+
+```{r Create Coefficients}
+
+#Creating objects 
+
+Displacement = (CarInfo$displ)
+Cylinders = (CarInfo$cyl)
+Model = (CarInfo$model)
+Manufacturer = (CarInfo$manufacturer)
+
+Model2 = head(Model,15)
+Manufacturer2 = head(Manufacturer,15)
+
+DisSum = sum(Displacement)
+CylnSum = sum(Cylinders)
+
+DispCyln = Displacement*Cylinders
+SumDispCyln = sum(DispCyln)
+
+DisplDet = (Displacement^2)
+CylnDet = (Cylinders^2)
+
+n = 234
+
+#Using formula for coefficients
+
+R =  round(n*(SumDispCyln) - (DisSum)*(CylnSum)/sqrt(n*sum(DisplDet))-(DisplDet) * (n*sum(CylnDet) - (sum(CylnDet))), 1)
+
+
+#Creating objects to display first 10 observations of the table
+
+R10 = head(R, 15)
+DisplDet2 = head(DisplDet, 15 )
+CylnDet2 = head(CylnDet, 15 )
+
+#Creating matrix to create a good visualization of the values
+
+#Table -1
+Objects1  = c(Manufacturer2 , Model2, R10)
+Task1table1 = matrix(data = c(Objects1),ncol = 3,byrow = F)
+colnames(Task1table1) = c("Manufacturer", "Car Names", "Coefficients")
+Matrix =  knitr::kable(Task1table1, caption = "Table 3 - First 15 values of Coefficients of Correlation Between Displacement and Cylinders") %>% 
+  kableExtra::kable_paper()
+
+
+#Table -2
+
+Objects2  = c(Manufacturer2 , Model2,DisplDet2, CylnDet2)
+Task1table2 = matrix(data = c(Objects2),ncol = 4,byrow = F)
+colnames(Task1table2) = c("Manufacturer", "Car Names","Determination of Displacement", "Determination of Cylinders")
+Matrix2 =  knitr::kable(Task1table2, caption = "Table 4 - First 15 values of Coefficients of Determination Between Displacement and Cylinders") %>% 
+  kableExtra::kable_paper(full_width = FALSE)
+
+
+Matrix
+Matrix2
+
+```
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Now I have a basic idea which car can give maximum displacement output if number of cylinders are increased, the above task shows the first few values for Coefficients of correlation and determination, these values shows how strong the relation is between Displacement and Cylinders. The data above means there is decrease in in displacement for every 1 unit of decrease in cylinders. Therefore we can conclude from the above data that cylinders are an important part of performance when selecting a new car.
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 4. Describe the DescTools </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+DescTools known as tools for descriptive statistics were first designed by Andri Signorell and colleagues mentioned is a huge collection that consists of various functions in statistics to describe data more effectively, DescTools also consists of various functions which help in the integration of various documents from different formats such as Microsoft Word or Microsoft PowerPoint point and the main thing is data retrieval from Microsoft Excel, there are numerous functions that can help in analysis of data from basic statistical tools to advance tools, which produces summary of different types of variables, it chooses its own suitable graph for the value of X Signorell, A., Aho, K., Alfons, A., Anderegg, N., Aragon, T., Arachchige, C., ... & Bolker, B. (2016). 
+DescTools is the fastest way to compute the required data such as Confidence Intervals, lets take an example where DescTools were used to compute the 95 percent confidence interval, therefore in the study done by Bakouny, Z. published in 2021, they used Clopper Pearson method in DescTools to analyze the 95% Confidence interval levels in regards to relationship between cancer and Covid-19.  
+<Mark> One of the codes I am going to use in this task is DESC , which is used to store dichotomous variables in one single plot by producing a dotplot with their corresponding error bars, one similar code is summary.plot, Signorell, A., Aho, K., Alfons, A., Anderegg, N., Aragon, T., Arachchige, C., ... & Bolker, B. (2016).  
+
+The variable of choice here is Cylinders and displacement from MPG data set. 
+</FONT>
+
+
+```{r 4. Describe DESC tools}
+
+#Using two variables of interest
+DescTools::Desc(mpg$displ)
+#All the values are relative to 95% confidence interval
+
+DescTools::Desc(mpg$cyl)
+
+```
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Tables :   
+DESC tools created very beautiful graphs from the following variables listed above, We can see above in the table it contains short summary of every measure in a 2 dimensional array.In the next table About cylinders are the same values we obtained in task 2.8 which shows that there are high number of cars with <MArk> 4 cylinder and 6 cylinder configuration. </MArk>  
+Figures :  
+The above figure 1 shows 3 types of graph, a histogram which shows no spaces and has good distribution, the second graph shows a box plot whose most of the data about the cylinders lie in the 75th percentile and the last graph is a line graph which shows increase in frequency as the number of cylinders increases. The above figure 2 also shows a box plot in which most of data are evenly distributed in upper and lower quantiles and a line graph which shows increase in frequency as displacement increases. 
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 5. Linear Regression </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Suppose we wanna know what will be the effect of cylinders on displacement in future as we need to predict it and to predict it, this task we will obtain the linear regression between the Cylinders and Displacement
+</FONT>
+
+```{r 5. Linear Regression}
+DisSum = sum(Displacement)
+CylnSum = sum(Cylinders)
+
+DisplCyln = c(Displacement~Cylinders)
+
+#Using summary to get slope and intercept
+SummaryL = summary(DisplCyln)
+
+#Or we can also use lm to get the slope and intercept
+
+RegAnalysis = lm(Displacement~Cylinders) #values for regression formula
+
+
+#Y = a+bx
+#therefore a is the intercept
+
+Intercept = -0.9199
+Slope = 0.7458
+
+#Calculating predicting values
+YPredict = Intercept+Slope*Cylinders
+
+
+
+
+```
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+The formula for linear regression model we will use is <MARK> Y = a+bx </MARK> where Y is the variable which is dependent variable, a can be denoted by intercept , b can be denoted as slope and x is denoted by independent variable so for our case, <mark> Predicted_value = Intercept+Slope*Cylinders </mark> the first few answers are = ``r head(YPredict,5)`` , these following are the predicted values of our regression model in respect of intercept of ``r Intercept`` and slope = ``r Slope`` with respect to X variable as Cylinders.  
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 6. Scatter Plot  </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+So for example we need to know if number of cylinders can predict the displacement so to get the desired results we will be plotting the above values on a scatter plot , for detailed explanation see the below observation
+</FONT>
+
+
+```{r 6. Scatter Plot}
+
+
+RegPlot = plot(Displacement~Cylinders,
+               main = " Figure 1 - Regression Model of Displacement vs Cylinders",
+     col= brewer.pal(6, "Set1"),
+     pch = 20, 
+     xlim = c(0,11),
+     ylim = c(0,9))
+
+abline(RegAnalysis, col = "#99004C", lty = 1, lwd = 2)
+
+```
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Above scatter plot shows dependent variable as Displacement which is a continuous variable.  
+Independent variable as Cylinders which is a multiple value discrete.  
+There is a strong correlation between cylinders and displacement and thus the data is good fit model.  
+Thus if number of cylinders increases, the displacement increases.  
+Strong relationship between two variables suggest that displacement can be predicted by number of cylinders.   
+Many variables do affect the performance of vehicle such as quality of tires, driving methods and road conditions.  
+
+<Mark> Legend:  
+Regression line is marked by a purple line.     
+Dots represent the observed values.  </Mark>
+
+
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 7. Predicted values and residuals </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+From the above task we determined how to find the predicted values now we will also retrieve the residual values of the data set, to determine the error we will be encountering in finding the correlation between the number of cylinders and displacement. 
+</FONT>
+
+
+
+
+```{r 7.  Predicted values and residuals}
+
+
+#linear regression formula
+
+Data = data.frame( Model, Cylinders, Displacement )
+
+Table2.7 = Data %>% 
+mutate(YPredict = Intercept + Slope * Displacement, Residue = Displacement-YPredict)
+
+#First 20 observations
+
+Table2.7_1 = head(Table2.7, 20)
+
+
+#Table -1
+ 
+Table2.7_1 %>%
+  kable(caption = "Table 5 - Prediction and Residul values of Cylinders vs Displacement") %>% 
+kableExtra:: kable_paper()
+
+
+```
+
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ From the above table we can see now the predicted values for displacement, so there will be 0.42254 increase in displacement with increase in every unit of cylinder. Therefore now we can predict displacement with number of cylinders.Therefore for 4 cylinders the observed displacement is <Mark> 1.8 </Mark> whereas the predicted value is increase in <mark> 0.42254</mark>, therefore the difference between the two is <mark> 1.37746 </mark>, it is important to use residuals to check how reliable are the predictions,<mark>   well for cars with 4 cylinders has a difference of 1.37746 therefore our predicted displacement differs from the observed displacement by 1.37746. </mark> Same applies to rest of the values. 
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 8. Frequency and percentage table </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+<B>I will be obtaining different values for Number of Cylinders against the Frequency of Cars</B> 
+
+```{r 8. Frequency and percentage table }
+
+CarCyl = table(CarInfo$cyl)
+CarFrame = as.data.frame(CarCyl)
+
+
+names(CarFrame)[names(CarFrame) == "Var1"] = "Number of Cylinders"
+names(CarFrame)[names(CarFrame) == "Freq"] = "Frequency_of_Cars"
+
+
+CarFrame = mutate(CarFrame,
+  Cumulative_Frequency = cumsum (CarFrame$Frequency_of_Cars), 
+  Percentage = round ((Frequency_of_Cars/sum(Frequency_of_Cars)) * 100, 2), 
+  Cumulative_Percentage = cumsum (Percentage))
+
+knitr::kable(CarFrame, caption = "Table 6 - Cumulative Freqeuncy and Percentage relative to number of Cylinders")%>%
+  kableExtra::kable_paper()
+
+```
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ Overall observation in Task 9
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 9. Frequency and percentage Plot </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Using the data from the above table we will be using it to plot different graphs 
+
+```{r 9. Frequency and percentage table }
+
+
+
+par (mfrow=c(2,2))
+
+# First 
+
+CarFreq = barplot(
+  CarFrame$Frequency_of_Cars,
+  col = brewer.pal(4,"Dark2"),
+  cex.names = 0.7, 
+  ylim = c(0,100),
+  names.arg = CarFrame$`Number of Cylinders`,
+  main = " Cars - Frequencies",
+  xlab = "Cars", 
+  ylab = "Frequency of cars"
+)
+text(
+  y = CarFrame$Frequency_of_Cars,
+  CarFreq,
+  CarFrame$Frequency_of_Cars,
+  cex = 0.6,
+  pos = 3
+)
+box(which = "plot", col = "red")
+box(which = "figure", col = "green")
+
+#Second 
+
+CarCumFreq = barplot(
+  CarFrame$Cumulative_Frequency,
+  col= brewer.pal(4, "Dark2"),
+  cex.names = 0.7, 
+  ylim = c(0,280),
+  names.arg = CarFrame$`Number of Cylinders`,
+  main = "Cumulative Frequencies of Cars",
+  xlab = "Cumlative Frequency of Cars",
+  ylab = "Frequency of Cars"
+)
+text(
+  y = CarFrame$Cumulative_Frequency,
+  CarCumFreq,
+  CarFrame$Cumulative_Frequency,
+  cex = 0.6,pos = 3
+)
+
+box(which = "plot", col = "red")
+
+#Third
+
+CarPercent = barplot(
+  CarFrame$Percentage,
+  col= brewer.pal(4, "Set3"),
+  cex.names = 0.7, 
+  ylim = c(0,50),
+  names.arg = CarFrame$`Number of Cylinders`,
+  main = "Percentages of Cars",
+  xlab = "Precentage of Cars",
+  ylab = "Frequency Of Cars"
+)
+text(
+  y = CarFrame$Percentage,
+  CarPercent,
+  CarFrame$Percentage,
+  cex = 0.6,pos = 3
+)
+
+box(which = "plot", col = "green")
+
+#Fourth
+
+CarCumPercent = barplot(
+  CarFrame$Cumulative_Percentage,
+  col= heat.colors(8),
+  cex.names = 0.7, 
+  ylim = c(0,120),
+  names.arg = CarFrame$`Number of Cylinders`,
+  main = "Cumulative Percent of Cars",
+  xlab = "Cumulative Percentage of Cars",
+  ylab = "Frequency"
+)
+text(
+  y = CarFrame$Cumulative_Percentage,
+  CarCumPercent,
+  CarFrame$Cumulative_Percentage,
+  cex = 0.6,
+  pos = 3
+)
+
+box(which = "figure")
+
+```
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Four of the above graphs are taken from the above table which displays frequencies, percentage, cumulative frequencies and cumulative percentage in relative to the number of cars having 4 cylinders, the highest number of cars are the ones having 4 and 6 cylinders. Observe the last value which is equal to the number of observations in data set, this is because the total number of frequencies keeps on adding as it goes more further, same for the cumulative percentage it reaches 100% at-last, also called as less than cumulative frequency, . The bar plot also shows how many percentage of cars are having 4,5,6,8 cylinders.About 34.62 percent of cars are having 4 cylinder engine which gives  automobile industry an idea on how many cylinder cars should be produced more and which one is lacking. 
+</FONT>
+
+
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 10. Making predictions from the above values </U> </B> 
+</FONT>
+<B></B>
+
+Predictions if the car has 2 and 10 cylinders:  
+We will use the following formula: Y = a+bx
+
+
+```{r 10 predictions}
+
+#as the formula stated above lets define the given values
+
+X1 = 2 #Cylinders
+X2 = 10 #Cylinders 
+
+#therefore
+
+Intercept = -0.9199
+Slope = 0.7458
+
+#What will be displacement if number of cylinders is equal to 2
+
+PredictDispl2 = round(Intercept + Slope * X1,2) 
+
+#What will be displacement if number of cylinders is equal to 10
+
+PredictDispl10 = round(Intercept + Slope * X2,2)
+
+#Table
+Objects10  = c(PredictDispl2 ,PredictDispl10)
+Task10table1 = matrix(data = c(Objects10),ncol = 2,byrow = F)
+colnames(Task10table1) = c("Prediction for 2 Cylinder", "Prediction for 10 Cylinder")
+Matrix10 =  knitr::kable(Task10table1, caption = "Table 7 - Prediction values for 2 and 10 cylinder engine") %>% 
+  kableExtra::kable_paper()
+Matrix10
+```
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+The values mean if there are 2 cylinders added in a car there will ``r PredictDispl2`` increase in displacement since we have a positive value, and for 10 cylinders engine there will be ``r PredictDispl10`` increase in the displacement of engine of car.
+</FONT>
+
+<BR>
+
+---
+
+---
+
+
+<BR>
+
+<Center>
+<P><BR>
+<FONT SIZE=3, COLOR="#0C2E7F">
+<B> <U> Section 3 - Multiple Regression </U> </B> 
+</FONT>
+</Center>
+
+<BR>
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 1. Making predictions in multiple regression model </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+Assume we need to predict systolic blood pressure in various age groups with various values of weight, so that drug doses can prescribed appropriately and we will know the exact value of Systolic Blood Pressure. 
+
+
+```{r 1. Making predictions in multiple regression model}
+#Data Set
+PatientID = c("PK01","PK02","PK03","PK04","PK05","PK06","PK07","PK08","PK09","PK10","PK11","PK12","PK13","PK14","PK15")
+SystolicBP =  c(112,156,125,145,155,162,139,144,153,126,169,132,143,153,162)
+AGE =  c(45,60,55,60,62,71,57,59,64,42,75,52,59,67,73)
+Weight =  c(135,182,148,182,190,232,194,182,217,171,225,173,184,194,211)
+
+#Creating Objects and tables
+Objects3.1  = c(PatientID, SystolicBP, AGE, Weight)
+Task1table3 = matrix(data = c(Objects3.1),ncol = 4,byrow = F)
+colnames(Task1table3) = c("Patient ID", "Systolic BP", "Age of the patient (In Years)", "Weight of the Patient (In Pounds)" )
+Matrix3.1 =  knitr::kable(Task1table3, caption = "Table 8 - Patient Details")%>% 
+  kableExtra:: kable_paper()
+
+#Calculating correlations:
+
+BpAge = round(cor(SystolicBP,AGE),2)
+BPWeight = round(cor(Weight,SystolicBP),2)
+
+DetBPAge = round(BpAge^2, 2)
+DetBPWeight = round(BPWeight^2, 2)
+
+Matrix3.1.2 = matrix(data = c(BpAge, BPWeight, DetBPAge, DetBPWeight),nrow = 4,ncol = 1, byrow = T)
+rownames(Matrix3.1.2) = c("Correlation between BP and Age", "Correlation between BP and Weight", "Determination of BP and Age", "Determination between BP and Weight")
+MatrixTable1 = knitr::kable(Matrix3.1.2, caption = "Table 9 - Correlation and Determination between Systolic BP, Age and Weight")%>%  
+kableExtra:: kable_paper()
+
+
+#Using F-test for correlation
+
+Reg = lm(SystolicBP ~ AGE+Weight)
+#summary(Reg)
+
+RegMulti = round(0.9059 , 2)
+
+#Rounding up the Square root 0.9059 to 0.9056 therefore using the F-test formula we get the following:
+FTest3.1 = round((0.906/3) / ((1-0.906) / (15-3-1)), 2)
+
+
+n= 15
+df = n-2
+alpha = 0.05
+
+CrticalV2 = round(qt((1-0.05/2),df),2)
+
+#Stating null hypothesis and alternative hypothesis:
+#H0 = There is no relationship between systolic blood pressure and the two given variables.
+#H1 = There is significant relationship between systolic blood pressure and the two given variables.
+
+#Therefore testing for hypothesis using critical value approach
+Hypothesis2 = ifelse(FTest3.1 > CrticalV2 ,"Reject H0", "Fail To Reject H0")
+
+
+
+Hypotable1 = matrix(data = c(Hypothesis2),nrow =1 ,ncol = 1, byrow = T)
+rownames(Hypotable1) = c("F-Test > Crtical Value = TRUE")
+Hypo1 = knitr::kable(Hypotable1)%>%  
+kableExtra:: kable_paper()
+
+
+
+Intercept3.1  = 39.1575
+SlopeAge = 0.9824
+SlopeWeight = 0.2495
+
+#Systolic blood pressure of a patient of 30 years of age and weight of 148:
+
+SystolicBp1 =  round((Intercept3.1 + SlopeAge * 30 + SlopeWeight* 148),2) 
+
+#Systolic blood pressure of a patient for a age of 75 years and weight 196:
+
+SystolicBp2 =  round((Intercept3.1 + SlopeAge * 75 + SlopeWeight* 196),2)
+
+
+
+Matrix3.1.3 = matrix(data = c(RegMulti, FTest3.1, CrticalV2, SystolicBp1, SystolicBp2),nrow =5 ,ncol = 1, byrow = T)
+rownames(Matrix3.1.3) = c("Multiple R Squared", "F-Test Value", "Critical Value", "Predicted Systolic BP of Age 30 yrs and Weight 148", "Predicted Systolic BP of Age 75 yrs and Weight 196")
+Matrix3.1.4 = knitr::kable(Matrix3.1.3, caption = "Table 10 - showing different values as mentioned")%>%  
+kableExtra:: kable_paper()
+
+Matrix3.1
+MatrixTable1
+Matrix3.1.4
+Hypo1 
+```
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+In the above task We have calculated various test to determine if the systolic blood pressure of a patient is possible to be predicted using the age and Weight of patient, thus after doing thorough analysis of the data the conclusion is, Yes we can predict systolic blood pressure from the given other two variables, prediction values are as described in the table above , this task also contains hypothesis testing through F critical value approach which shows that F test is greater than Critical value therefore we rejected null hypothesis, hence we have enough evidence to reject null hypothesis therefore the data shows significant difference between systolic blood pressure and the two variables. Thus blood pressure of a patient increases as the age increases and as the weight increases, systolic blood pressure is direct proportional to  age and weight of an individual. 
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 2. Scatter Plots </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+I will be plotting scatter plot for two different variables in relation to systolic blood pressure. 
+
+
+```{r 2. Scatter Plots}
+par(mfrow =c(1,2))
+
+#Calculating and plotting regression analysis for Systolic Blood Pressure in regards to Age
+
+RegAGE = lm(SystolicBP  ~  AGE) #Here AGE is our independent variable since Systolic Bp can be affected by age.
+
+AgePlot = plot(AGE,SystolicBP,
+                main = "Age and Sys BP",
+                col= brewer.pal(8, "Accent"),
+                pch = 19,
+                ylim= c(110,180),
+                xlim = c(35,85))
+
+abline(lm(SystolicBP  ~  AGE), col = "#37920F", lty = 1, lwd = 2)
+
+box(which = "figure", col="red")
+
+
+#Calculating and plotting regression analysis for Systolic Blood Pressure in regards to Weight
+RegWeight = lm(SystolicBP~Weight) #Here weight is our independent variable since obesity leads to Hypertension.
+
+WeightPlot = plot(Weight,SystolicBP,
+     col= brewer.pal(8, "Dark2"),
+     main = "Weight and Sys BP",
+     pch = 19,
+     ylim = c(110,180),
+     xlim = c(135,250)
+  )
+
+abline(lm(SystolicBP ~ Weight), col = "#800F92", lty = 1, lwd = 2)
+
+box(which = "figure", col="green")
+
+```
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+There are two figures shown above, one depicts the correlation between Systolic Bp and Age and another shows the correlation between Systolic BP and Weight, as we can see observed values are seen very close to the line in the first graph which shows that it is a good fit and hence the systolic blood pressure is highly related to increase in Age of patient, therefore less error or residual line, on the other hand other graph shows weight as independent variable and systolic blood pressure as dependent variable, data is highly near to the line therefore shows that weight has high significance in increasing systolic blood pressure.  
+Above scatter plot shows dependent variable as Age and weight both are continuous variable.  
+Independent variable as systolic blood pressure which is also a continuous variable. 
+There is a strong correlation between weight and systolic blood pressure  and thus the data is good fit model. but in case of age it does not have strong correlation with systolic blood pressure therefore it does not fit good in the regression model.   
+Thus if the weight of the person increases the systolic blood pressure increases, but whereas age of the person does not show much correlation with systolic blood pressure.  
+Strong relationship between weight and systolic blood pressure shows we can predict systolic blood pressure with weight of the patient, whereas age of the patient cannot predict the systolic blood pressure.   
+  
+
+<Mark> Legend:  
+Regression line is marked by a green line and purple line.     
+Dots represent the observed values.  </Mark> 
+
+Overall:   
+
+1.	Predicted value for Y, Predicted Systolic BP of Age 30 yrs and Weight 148, where B1 is age and B2 is weight
+a = 39.1575
+b1 = 0.9824
+b2 = 0.2495
+x1 = 30
+x2 = 148
+
+Therefore, with the formula: Y = a+b1*x1+b2*x2 =  ``r SystolicBp1`` mmHg
+2.	Multiple R-squared = ``r RegMulti``
+
+3.	The F-test value is ``r FTest3.1``
+4.	The critical value is ``r CrticalV2``
+5.	Since both the variables are moving in the same direction the relationship can be called positive.
+6.	Null hypothesis states that there is no correlation, H0 = 0.
+7.	Since ``r FTest3.1`` > ``r CrticalV2`` thus we reject the null hypothesis and can conclude that there is not enough evidence to declare that correlation is not equal to zero.
+
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+ <U><B> 3. Predicted values and Residuals </B> </U> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ From the above information we can see that in the scatter plot we have observed value and the regression line now we need to know the predicted values of the two variables so that we can see if it is reliable to predict the values of Systolic Blood pressure. 
+
+
+```{r 3. Predicted values and Residuals}
+
+Object3.2  = matrix(c(PatientID,AGE,Weight,SystolicBP),nrow = 15,ncol = 4,byrow = F)  
+colnames(Object3.2) = c("Patient ID","Age of Patient","Weight of Patient","Systolic Blood Pressure")
+
+#Creating dataframe to incorporate table
+Table3 = as.data.frame(Object3.2)
+
+#Using linear regression code 
+AgeBP  = lm(SystolicBP ~ AGE)
+SumAgeBP  = summary(AgeBP) #to get multiple R squared value.
+
+#To get selected coefficients 
+AgeIntercept2 = SumAgeBP$coefficients[1] #to get the estimated intercept
+AgeSlope2 = SumAgeBP$coefficients[2,1] # to get the slope of the first variable AGE
+
+WeightBP  = lm(SystolicBP ~ Weight)
+SumWeightBP  = summary(WeightBP)
+
+WeightIntercept2 = SumWeightBP$coefficients[1]
+SlopeWeight2 = SumWeightBP$coefficients[2,1] # to get the slope of the first variable Weight
+
+Matrix3.3  = Table3 %>%
+           mutate(Predicted_by_Age = AgeIntercept2 + AgeSlope2 * AGE, Predicted_by_Weight = WeightIntercept2 + SlopeWeight2* Weight, 
+                  
+                  Residual_by_Age = AGE - Predicted_by_Age, Residual_by_Weight= Weight - Predicted_by_Weight )
+
+knitr::kable(Matrix3.3) %>% 
+  kableExtra::kable_paper()
+
+
+```
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ In the above table lets take the first value, for age of 45 years and weight of 135 pounds the observed value of systolic blood pressure is 112, the predicted value for age 45 is 121.39, for weight is 116.365 and Residual for age is -76.38 which shows the difference between age and BP therefore concludes that predictions are too high and are not reliable whereas for weight the residues have very less difference, for weight of 135 pounds the residue is 18.63 which calculates the difference between the observed value of the weight in pounds and predicted value of weight, therefore it is reliable and systolic blood pressure can be predicted by the independent variable weight.   
+</FONT>
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> 4. Residuals Plots </U> </B> 
+</FONT>
+
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+ Residuals can be a good statistical tool to determine the accuracy or relaibility of predicting data about the two variables.   
+
+
+
+```{r 4. Residual Plots}
+
+par(mfrow = c(1,2))
+
+
+#For Age
+
+ResidualAge = c(Matrix3.3$Residual_by_Age)
+
+Ageplot2  = plot(AGE,ResidualAge,
+            main = "The Residuals vs Age Values",
+            xlab = "Age of Patient",
+            ylab = "Residuals of Age in Years",
+            col = brewer.pal(8,"Set3"),
+            pch = 19)
+
+box(which = "figure", col = "darkred")
+
+
+
+#For Weight
+
+ResidualWeight = c(Matrix3.3$Residual_by_Weight)
+
+WeightPlot2 = plot(Weight, ResidualWeight,
+            main = "The Residuals vs Weight Values",
+            ylab = "Residual of Patient Weight in Pounds",
+            xlab = "Weight in Pounds",
+            pch = 19,
+            col = brewer.pal(8,"Dark2"))
+
+box(which = "figure", col = "brown")
+
+
+
+```
+
+
+
+<BR>
+
+<P><BR>
+<FONT SIZE=2.5, COLOR="#8C038C">
+There are two figures shown above, one depicts the correlation between Residuals of Age and observed value of Age and another shows the correlation between Residual weight and observed value of Weight, as we can see observed values are seen in the opposite direction that is in negative side which shows that the residuals are too high which makes age a bad predictor of Systolic Blood Pressure, on the other hand other graph shows weight as independent variable and residuals by weight as dependent variable, data is highly near to the line therefore shows that weight has high significance in increasing systolic blood pressure and it can easily predict the future values.  
+Above scatter plot shows dependent variable as Age and weight both are continuous variable.     
+Low residuals and positive relationship between weight and residuals of weight shows we can predict systolic blood pressure with weight of the patient, whereas age of the patient cannot predict the systolic blood pressure.   
+  
+
+<Mark> Legend:  
+Dots represent the observed values.  </Mark>
+</FONT>
+
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> Conclusion </U> </B> 
+</FONT>
+
+<FONT SIZE=2.5, color = "black">
+
+This conclusion will include making an overall observation and comparing one task with another, with their similarities, challenges encountered, and what their values meant in terms of predicting the outcome, This project is comprised of an MPG dataset which is a part of an R package called ggplot2. I have described the dataset thoroughly and used it for different calculations which are a part of Correlation and regression. This project is comprised of two sections, one for Simple linear regression which generally helps us to identify the relationship between the two continuous variables, Zou, K. H., Tuncali, K., & Silverman, S. G. (2003), and the other is for multiple regression model which helps us to identify the relationship between two independent variables and one dependent variable, Tranmer, M., & Elliot, M. (2008). For Simple Linear Regression this project covers 9 tasks and for Multiple regression, it covers 4 tasks.   
+Calculations for Simple Linear Regression were done using two variables named Displacement of Car and Number of Cylinders in a car, our car collection included some of the top car manufacturers with high-performance engines including 4,5,6,8 cylinder and heavy displacement. I have analyzed the data of these two variables using different graphical parameters, such as a table used to describe the descriptive stats of the two variables, graphs such as bar plot, line graph, and boxplot using DESC tools, and a linear regression graph also called X and Y graph or scatter plot. To construct the following graphs formulas were applied to the codes, different frequencies were obtained, and were plotted on several graphs. Calculations for the Multiple Regression model were also done using tables and graphs but this time different methods were applied compared to the regression model, the slope, intercept and R squared value were calculated using the R codes where we got the summary of the data, along with the scatter plot, the residual plot was also generated which showed us how reliable is the prediction made by the independent variable for that of the dependent variable.   
+
+Recommendations:
+
+Simple Linear Regression  
+Recommendations if this was a dataset that was being utilized by the car company there would be several analyzed outcomes that can help the automobile industry to build effective and efficient cars. So let’s assume an automobile industry has analyzed this data set and wanted to know if they increase the cylinders will there be a significant change in the displacement of the car, to do this they have already stated their alternative hypothesis, therefore to prove it, now they analyze the data using the above techniques, from the data they now know what will be the effect on the displacement and what are the possible reliable factors through which they can predict the values for future references. After analyzing the data, I would recommend the car company to increase more cylinders since it can also increase displacement, and if displacement is high the power is high, and if cylinders are more it’s more fuel-efficient, making it the best car for everyone with more power and more economy is fuel saving.  
+
+Multiple Linear Regression.  
+Imagine if this dataset for multiple regression was done by the healthcare industry, there will be good values to predict whether the weight of the patient has a significant impact on the increased systolic blood pressure of the patient, not considering age because there is less or no relationship between age and systolic blood pressure. So, recommendations from this results analysis; lifestyle modifications should be encouraged for all obese patients since they carry a high risk of developing Hypertension, and accessible healthcare awareness should be encouraged in hospitals by opening this data analysis to every healthcare industry to prove that weight can affect systolic blood pressure.   
+
+</FONT>
+
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> References </U> </B> 
+</FONT>
+
+<FONT SIZE=2.5, color = "black">
+
+
+Azoulay, L., & Suissa, S. (2017). Sulfonylureas and the risks of cardiovascular events and death: a methodological meta-regression analysis of the observational studies. Diabetes care, 40(5), 706-714.  
+
+Bakouny, Z., Paciotti, M., Schmidt, A. L., Lipsitz, S. R., Choueiri, T. K., & Trinh, Q. D. (2021). Cancer screening tests and cancer diagnoses during the COVID-19 pandemic. JAMA oncology, 7(3), 458-460.  
+
+Bluman, A. G. (2009). Elementary statistics: A step by step approach. New York: McGraw-Hill Higher Education.    
+
+Cooper, A. (2012). What is analytics? Definition and essential characteristics. CETIS Analytics Series, 1(5), 1-10.  
+
+Denis, D. (2001). The origins of correlation and regression: Francis Galton or Auguste Bravais and the error theorists. History and Philosophy of Psychology Bulletin, 13(2), 36-44.  
+
+Hogg, R. V. (1972). More light on the kurtosis and related statistics. Journal of the American Statistical Association, 67(338), 422-424.  
+
+Javanmard, A., & Montanari, A. (2014). Confidence intervals and hypothesis testing for high-dimensional regression. The Journal of Machine Learning Research, 15(1), 2869-2909.   
+
+Kabacoff, R. I. (2015). R in Action (2nd ed.). Manning Publications.  
+Miller, D., & Millar, I. (1996). The Cambridge dictionary of scientists. Cambridge University Press: Cambridge.  
+
+Pearson, K. (1920). Notes on the history of correlation. Biometrika,13, 25-45.  
+
+Ribeiro, M. L., Martins, T., Angélico, R. A., Vandepitte, D., & Tita, V. (2012). PROGRESSIVE FAILURE ANALYSIS OF LOW ENERGY IMPACT IN CAR-BON FIBER FILAMENT WINDING CYLINDERS. In 10th World Congress on Computational Mechanics–WCCM. 
+
+Signorell, A., Aho, K., Alfons, A., Anderegg, N., Aragon, T., Arachchige, C., ... & Bolker, B. (2016). DescTools: Tools for descriptive statistics. R package version 0.99. 18. R Foundation for Statistical Computing, Vienna, Austria.  
+
+Stigler, S. M. (1986). The history of statistics: the measurement of uncertainty before 1900. The Belknap Press of Harvard University Press: Cambridge.  
+
+Tranmer, M., & Elliot, M. (2008). Multiple linear regression. The Cathie Marsh Centre for Census and Survey Research (CCSR), 5(5), 1-5.
+Walker, H. M. (1929). Studies in the history of statistical methods. The Williams & Wilkins Company: Baltimore.  
+
+Xue, K., & Yao, F. (2021). Hypothesis testing in large-scale functional linear regression. Statistica Sinica, 31, 1101-1123.  
+
+Zou, K. H., Tuncali, K., & Silverman, S. G. (2003). Correlation and simple linear regression. Radiology, 227(3), 617-628.
+
+</FONT>
+<BR>
+
+---
+
+---
+
+<BR>
+
+<P><BR>
+<FONT SIZE=3, COLOR="#037C8C">
+<B> <U> Appendix </U> </B> 
+</FONT>
+
+
+A rmd file has been attached along with this HTML report named as Tiwari_FinalReport.rmd.
+
+
+<BR>
+
+---
+
+---
+
+<BR>
+
+
